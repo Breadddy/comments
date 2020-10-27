@@ -35,7 +35,7 @@ class comments
     }
     function getComments() 
     {
-        $quest = "SELECT id, name, name, message, datatime FROM comments ORDER BY datatime limit 100";
+        $quest = "SELECT id, name, name, message, datatime FROM comments ORDER BY datatime DESC limit 100";
         if(!$result = $this->mysqli->query($quest))
             return false;
         $items = mysqli_fetch_all($result, MYSQLI_ASSOC); 
