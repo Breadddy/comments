@@ -15,6 +15,7 @@ if(isset($_SESSION['error']))
         unset($_SESSION['error']);
     }
     $messages=$obj->getComments();
+    if ($messages)
     foreach ($messages as $message)
     {
         $datatime=date('H:i d.m.Y',$message['datatime']);
