@@ -18,11 +18,8 @@ class comments
         $datatime=time();
         if ($stmt = $this->mysqli->prepare("INSERT INTO comments (name, message, datatime) VALUES (?, ?, ?)")) 
         {
-            /* связываем параметры с метками */
             $stmt->bind_param("ssi", $name, $message, $datatime);
-            /* запускаем запрос */
             $stmt->execute();
-            /* закрываем запрос */
             if (!empty($stmt->error))
                 { //echo $stmt->error;
                   $stmt->close();
